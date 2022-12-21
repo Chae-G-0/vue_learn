@@ -1,5 +1,7 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+  <div class="menu">
+    <a v-for="작명 in menus" :key="작명"> {{작명}} </a>
+  </div>
   <div>
     <h3> {{products[0]}} </h3>
     <p>500/50</p>
@@ -20,6 +22,7 @@ export default {
   name: 'App',
   data() {
     return {
+      menus: ['Home', 'Shop', 'About'],
       products : ['서면 원룸', '해운대 원룸', '부산대 원룸']
     }
   }
@@ -33,6 +36,16 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+.menu {
+  background: #7943ca;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.menu a {
+  color: #fff;
+  padding: 10px;
 }
 </style>
